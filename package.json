@@ -1,0 +1,23 @@
+{
+  "name": "currency-converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlblumberg/currency-converter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlblumberg/currency-converter/issues"
+  },
+  "homepage": "https://github.com/jlblumberg/currency-converter#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
