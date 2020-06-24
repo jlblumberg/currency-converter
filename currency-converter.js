@@ -31,10 +31,11 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   const exchangeRate = await getExchangeRate(fromCurrency, toCurrency);
   const convertedAmount = (amount * exchangeRate).toFixed(2);
 
-  return `${amount} ${fromCurrency} is worth ${convertedAmount} ${toCurrency}. You can spend these in the following countries: ${countries}`
+  return `${amount} ${fromCurrency} is worth ${convertedAmount} ${toCurrency}. You can spend this in the following country/countries: ${countries}.`
 }
 
-convertCurrency('USD', '123', 30)
+// change the arguments below, in the form (fromCurrency, toCurrency, amount)
+convertCurrency('USD', 'CAD', 30)
   .then((message) => {
     console.log(message);
   }).catch((error) => {
