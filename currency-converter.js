@@ -10,6 +10,10 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
   const base = 1 / rates[fromCurrency];
   const exchangeRate = base * rates[toCurrency];
 
+  if(isNaN(exchangeRate)) {
+    throw new Error(`Unable to process currencies: ${fromCurrency} and ${toCurrency}. Please check that the currency codes are correct.`)
+  }
+
   return exchangeRate;
 }
 
@@ -26,7 +30,9 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   return `${amount} ${fromCurrency} is worth ${convertedAmount} ${toCurrency}. You can spend these in the following countries: ${countries}`
 }
 
-convertCurrency('USD', 'HRK', 30)
+convertCurrency('USD', 'CAD', 30)
   .then((message) => {
     console.log(message);
+  }).catch((error) => {
+    console.log(error.message);
   });
